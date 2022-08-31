@@ -12,9 +12,18 @@ import { RickMortyService } from 'src/app/services/rick-morty.service';
 export class GridComponent implements OnInit {
   // Each Column Definition results in one Column.
   public columnDefs: ColDef[] = [
-    { field: 'name' },
-    { field: 'species' },
-    { field: 'status' },
+    {
+      field: 'name',
+    },
+    {
+      field: 'species', editable: true
+    },
+    {
+      field: 'status'
+    },
+    {
+      field: 'episode'
+    },
   ];
 
   // DefaultColDef sets props common to all Columns
@@ -27,7 +36,7 @@ export class GridComponent implements OnInit {
   public rowData$!: Observable<any[]>;
   // For accessing the Grid's API
   @ViewChild(AgGridAngular) agGrid!: AgGridAngular;
-  constructor(public rickAndMortyService: RickMortyService) {}
+  constructor(public rickAndMortyService: RickMortyService) { }
 
   ngOnInit(): void {
 
