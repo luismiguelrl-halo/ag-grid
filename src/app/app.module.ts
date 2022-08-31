@@ -5,9 +5,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GridComponent } from './components/grid/grid.component';
+import { GridPaginationFeComponent } from './components/grid-pagination-fe/grid-pagination-fe.component';
 
 @NgModule({
-  declarations: [AppComponent, GridComponent],
+  declarations: [AppComponent, GridComponent, GridPaginationFeComponent],
   imports: [BrowserModule, AppRoutingModule, AgGridModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
