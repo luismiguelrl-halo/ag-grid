@@ -1,1 +1,42 @@
+$white: #ffffff;
 
+$main: #1ab188;
+$main-light: lighten($main,5%);
+$main-dark: darken($main,5%);
+$bold: 600;
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.container p {
+  font-size:1rem;
+  font-weight:$bold;
+  text-transform:uppercase;
+  letter-spacing: 0.1em;
+}
+
+.container button {
+  border:0;
+  width: 100px;
+  outline:none;
+  border-radius:0;
+  padding:15px 0;
+  font-size:1rem;
+  font-weight:$bold;
+  text-transform:uppercase;
+  margin: 0px 10px;
+  letter-spacing: 0.1em;
+  background:$main;
+  color:$white;
+  transition:all 0.5s ease;
+  -webkit-appearance: none;
+  &:hover, &:focus {
+    background:$main-dark;
+    cursor: pointer;
+  }
+}

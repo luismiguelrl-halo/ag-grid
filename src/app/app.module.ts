@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { GridComponent } from './components/grid/grid.component';
 import { GridEpisodeComponent } from './components/grid-episode/grid-episode.component';
 import { RouterModule, Routes } from '@angular/router';
+import { GridPaginationFeComponent } from './components/grid-pagination-fe/grid-pagination-fe.component';
 
 const routes: Routes = [
   { path: '', component: GridComponent },
@@ -15,8 +16,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, GridComponent, GridEpisodeComponent],
-  imports: [BrowserModule, AppRoutingModule, AgGridModule, HttpClientModule, RouterModule.forRoot(routes)],
+  declarations: [AppComponent, GridComponent, GridPaginationFeComponent, GridEpisodeComponent],
+  imports: [BrowserModule, AppRoutingModule, AgGridModule, HttpClientModule],
   providers: [],
   exports: [RouterModule],
   bootstrap: [AppComponent],

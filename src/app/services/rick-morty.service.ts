@@ -12,8 +12,11 @@ export class RickMortyService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public getCharacters(): Observable<Array<any>> {
-    return this.httpClient.get(`${this.url}character`).pipe(map((v: any) => v.results))
+  public getCharacters():Observable<any> {
+    return this.httpClient.get(`${this.url}character`);
+  }
+  public getCharactersByPage(nextData:string):Observable<any> {
+    return this.httpClient.get(`${nextData}`);
   }
 
   public getEpisodes(): Observable<Array<Episode>> {
