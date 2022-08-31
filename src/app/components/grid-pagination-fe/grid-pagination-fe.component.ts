@@ -3,6 +3,7 @@ import { AgGridAngular } from 'ag-grid-angular';
 import { CellClickedEvent, ColDef, GridReadyEvent } from 'ag-grid-community';
 import { Observable } from 'rxjs';
 import { BreakingBadService } from 'src/app/services/breaking-bad.service';
+import { CustomDateComponent } from '../custom-date/custom-date.component';
 
 @Component({
   selector: 'app-grid-pagination-fe',
@@ -11,11 +12,14 @@ import { BreakingBadService } from 'src/app/services/breaking-bad.service';
 })
 export class GridPaginationFeComponent {
 
+  public components = {
+    agDateInput: CustomDateComponent
+  };
 
   public columnDefs: ColDef[] = [
-    { field: 'name'},
-    { field: 'birthday'},
-    { field: 'occupation' }
+    { field: 'name', sortable: true, filter: true, },
+    { field: 'birthday', editable: true, sortable: true, filter: true },
+    { field: 'occupation', sortable: true, filter: true }
   ];
 
   // DefaultColDef sets props common to all Columns
@@ -32,7 +36,7 @@ export class GridPaginationFeComponent {
   // For accessing the Grid's API
   @ViewChild(AgGridAngular) agGrid!: AgGridAngular;
 
-  constructor(private breakingBadService:BreakingBadService) {}
+  constructor(private breakingBadService: BreakingBadService) { }
 
   // Example load data from sever
   onGridReady(params: GridReadyEvent) {
@@ -40,7 +44,7 @@ export class GridPaginationFeComponent {
   }
 
   // Example of consuming Grid Event
-  onCellClicked( e: CellClickedEvent): void {
+  onCellClicked(e: CellClickedEvent): void {
     console.log('cellClicked', e);
   }
 

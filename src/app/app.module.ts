@@ -8,6 +8,7 @@ import { GridComponent } from './components/grid/grid.component';
 import { GridEpisodeComponent } from './components/grid-episode/grid-episode.component';
 import { RouterModule, Routes } from '@angular/router';
 import { GridPaginationFeComponent } from './components/grid-pagination-fe/grid-pagination-fe.component';
+import { CustomDateComponent } from './components/custom-date/custom-date.component';
 
 const routes: Routes = [
   { path: '', component: GridComponent },
@@ -16,7 +17,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, GridComponent, GridPaginationFeComponent, GridEpisodeComponent],
+  declarations: [AppComponent, GridComponent, GridPaginationFeComponent, GridEpisodeComponent, CustomDateComponent],
   imports: [BrowserModule, AppRoutingModule, AgGridModule, HttpClientModule],
   providers: [],
   exports: [RouterModule],
